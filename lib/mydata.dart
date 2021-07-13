@@ -37,7 +37,7 @@ class MyData extends ChangeNotifier {
 
       http.Response response = await http.get(
         Uri.parse(
-            'https://api.openweathermap.org/data/2.5/weather?lat=$_lat&lon=$_lon&appid=3df4f27927a66152a1b3b8be15093de7'),
+            'https://api.openweathermap.org/data/2.5/weather?lat=$_lat&lon=$_lon&appid=<openweathermap.org API key>'),
       );
 
       if (response.statusCode == 200) {
@@ -70,7 +70,7 @@ class MyData extends ChangeNotifier {
 
     http.Response response = await http.get(
       Uri.parse(
-          'https://api.openweathermap.org/data/2.5/weather?lat=$_lat&lon=$_lon&appid=3df4f27927a66152a1b3b8be15093de7'),
+          'https://api.openweathermap.org/data/2.5/weather?lat=$_lat&lon=$_lon&appid=<openweathermap.org API key>'),
     );
 
     if (response.statusCode == 200) {
@@ -94,7 +94,7 @@ class MyData extends ChangeNotifier {
   // for adding new city
   void addCity(String _cityName) async {
     http.Response _res = await http.get(Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?q=$_cityName&appid=3df4f27927a66152a1b3b8be15093de7'));
+        'https://api.openweathermap.org/data/2.5/weather?q=$_cityName&appid=<openweathermap.org API key>'));
 
     if (_res.statusCode == 200) {
       var _data = convert.jsonDecode(_res.body);
